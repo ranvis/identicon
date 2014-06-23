@@ -2,9 +2,16 @@
 
 Identicon with variable complexity.
 
+
 ## Samples
 
-TODO
+https://github.com/ranvis/identicon/wiki/Samples
+
+
+## License
+
+BSD 2-Clause License
+
 
 ## Installation
 
@@ -63,7 +70,7 @@ returns $this.
 
 `output($size = null, $compression = -1, $filters = -1)`
 
-print image to stdout with Content-Type header.
+print PNG image to stdout with Content-Type header.
 
 * int $size image size
 * int $compression
