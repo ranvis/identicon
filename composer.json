@@ -1,0 +1,21 @@
+{
+	"name": "ranvis/identicon",
+	"description": "Identicon with variable complexity.",
+	"keywords": ["identicon"],
+	"license": "BSD-2-Clause",
+	"authors": [
+		{
+			"name": "SATO Kentaro",
+			"email": "kentaro@ranvis.com"
+		}
+	],
+	"require": {
+		"php": ">=5.5.0",
+		"ext-gd": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Ranvis\\Identicon\\": "src/"
+		}
+	}
+}
