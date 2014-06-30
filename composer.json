@@ -3,6 +3,10 @@
 	"description": "Identicon with variable complexity.",
 	"keywords": ["identicon"],
 	"license": "BSD-2-Clause",
+	"homepage": "https://github.com/ranvis/identicon/blob/master/README.md",
+	"support": {
+		"wiki": "https://github.com/ranvis/identicon/wiki/Samples"
+	},
 	"authors": [
 		{
 			"name": "SATO Kentaro",

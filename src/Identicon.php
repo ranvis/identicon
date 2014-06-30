@@ -37,7 +37,7 @@ class Identicon
     }
 
     /**
-     * returns number of hex characters required to draw icon
+     * get number of hex characters required to draw icon
      * @return int required hash length (bits / 4)
      */
     public function getMinimumHashLength()
@@ -141,7 +141,7 @@ class Identicon
     }
 
     /**
-     * explicitly frees memory used to render icon
+     * explicitly free memory used to render icon
      */
     public function free()
     {
@@ -169,8 +169,8 @@ class Identicon
     /**
      * print image to stdout with Content-Type header
      * @param int $size image size
-     * @param int $compression
-     * @param int $filters
+     * @param int $compression PNG compression level
+     * @param int $filters PNG filter flags to use
      * @return bool true on success
      */
     public function output($size = null, $compression = -1, $filters = -1)

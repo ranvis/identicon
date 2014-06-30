@@ -20,7 +20,7 @@ interface ITile
     public function allocate($size);
 
     /**
-     * free memory alloated for drawing tile
+     * free memory allocated for drawing tile
      */
     public function free();
 

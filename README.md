@@ -54,7 +54,7 @@ $identicon->draw($hash)->output();
 
 `getMinimumHashLength()`
 
-returns number of hex characters required to draw icon.
+get number of hex characters required to draw icon.
 
 ### Identicon->draw()
 
@@ -73,8 +73,8 @@ returns $this.
 print PNG image to stdout with Content-Type header.
 
 * int $size image size
-* int $compression
-* int $filters
+* int $compression PNG compression level
+* int $filters PNG filter flags to use
 
 returns true on success.
 
