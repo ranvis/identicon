@@ -88,7 +88,7 @@ abstract class TileBase implements ITile
         if ($rotation & self::PATTERN_FLIP_V) {
             imageflip($image, IMG_FLIP_VERTICAL);
         }
-        if ($rotation) {
+        if ($rotation & self::PATTERN_ANGLE_MASK) {
             $image = imagerotate($image, ($rotation & self::PATTERN_ANGLE_MASK) * 90, $this->bgColorValue);
         }
         return $image;
