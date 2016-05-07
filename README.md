@@ -19,6 +19,14 @@ BSD 2-Clause License
 composer.phar require ranvis/identicon:1.0.*
 `
 
+1.1 or later may have incompatibility with 1.0.
+
+## Upgrading
+
+1.0.x is fully compatible with 1.0.0.
+
+See [CHANGES.md](CHANGES.md) for the details.
+
 ## Example Usage
 
 ```php
@@ -28,7 +36,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $hash = isset($_GET['hash']) ? $_GET['hash'] : '';
 if (!preg_match('/^[0-9a-f]{32}$/D', $hash)) {
-	header('HTTP/1.0 404 Not Found');
+	http_response_code(404);
 	exit;
 }
 

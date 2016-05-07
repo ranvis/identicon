@@ -6,7 +6,7 @@
 
 namespace Ranvis\Identicon;
 
-abstract class TileBase implements ITile
+abstract class TileBase implements TileInterface
 {
     protected $size;
     protected $bgColor;

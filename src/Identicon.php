@@ -18,12 +18,12 @@ class Identicon
 
     /**
      * @param int $maxSize maximum size of the icon to draw
-     * @param ITile $tile tile to use
+     * @param TileInterface $tile tile to use
      * @param int $tiles complexity of the icon
      * @param int $colors maximum usable colors
      * @param bool $highQuality prefer quality over memory and speed
      */
-    public function __construct($maxSize, ITile $tile, $tiles = 6, $colors = 2, $highQuality = true)
+    public function __construct($maxSize, TileInterface $tile, $tiles = 6, $colors = 2, $highQuality = true)
     {
         $this->maxSize = $maxSize;
         if ($highQuality && !function_exists('imageantialias')) {
