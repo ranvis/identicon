@@ -19,7 +19,7 @@ BSD 2-Clause License
 composer.phar require ranvis/identicon:1.0.*
 `
 
-1.1 or later may have incompatibility with 1.0.
+1.1 or later may have visual incompatibility with 1.0.
 
 ## Upgrading
 
@@ -30,18 +30,21 @@ See [CHANGES.md](CHANGES.md) for the details.
 ## Example Usage
 
 ```php
+use Ranvis\Identicon;
+
 require_once(__DIR__ . '/vendor/autoload.php');
 
 //$hash = md5($userId . 'YOUR_RANDOM_SALT_HERE_&ar/1R#S[|=hDF');
 
 $hash = isset($_GET['hash']) ? $_GET['hash'] : '';
+//$hash = $_GET['hash'] ?? ''; // PHP7+
 if (!preg_match('/^[0-9a-f]{32}$/D', $hash)) {
-	http_response_code(404);
-	exit;
+    http_response_code(404);
+    exit;
 }
 
-$tile = new \Ranvis\Identicon\Tile();
-$identicon = new \Ranvis\Identicon\Identicon(64, $tile);
+$tile = new Identicon\Tile();
+$identicon = new Identicon\Identicon(64, $tile);
 header('Cache-Control: public, max-age=31556952');
 $identicon->draw($hash)->output();
 ```
@@ -50,10 +53,10 @@ $identicon->draw($hash)->output();
 
 ### Identicon::__construct()
 
-`__construct($maxSize, ITile $tile, $tiles = 6, $colors = 2, $highQuality = true)`
+`__construct($maxSize, TileInterface $tile, $tiles = 6, $colors = 2, $highQuality = true)`
 
 * int $maxSize maximum size of the icon to draw
-* ITile $tile tile to use
+* TileInterface $tile tile to use
 * int $tiles complexity of the icon
 * int $colors maximum usable colors
 * bool $highQuality prefer quality over memory and speed
@@ -70,7 +73,7 @@ get number of hex characters required to draw icon.
 
 draw icon to internal buffer.
 
-* string $hash
+* string $hash arbitrary hex string
 
 returns $this.
 

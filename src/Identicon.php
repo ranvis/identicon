@@ -48,7 +48,7 @@ class Identicon
 
     /**
      * draw icon to internal buffer
-     * @param string $hash
+     * @param string $hash arbitrary hex string
      * @return $this
      */
     public function draw($hash)
