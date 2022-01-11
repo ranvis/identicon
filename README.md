@@ -102,7 +102,7 @@ save PNG image to file.
 
 returns true on success.
 
-### Identicon->getImage()
+### Identicon->getImage($size = null)
 
 get icon image.
 

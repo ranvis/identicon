@@ -11,17 +11,17 @@ class Tile extends TileBase
     public function __construct(array $bgColor = null)
     {
         parent::__construct($bgColor);
-        $this->patterns = array(
+        $this->patterns = [
             null, // empty
-            array(0, 0, 1, 0, .5, 1), 1, 2, 3, // regular triangle
-            array(0, 0, 1, 0, 0, 1), 1, 2, 3, // isosceles right triangle
-            array(0, 0, 1, 0.5, 0.5, 1), 1, 2, 3, // isosceles triangle
-            array(0, 0, 1, 1, 1, 0, 0, 1), 1, // bowknot
-            array(.5, 0, .5, 1, 1, .5, 0, .5), 1, // rotated bowknot
-            array(0, 0, .5, 0, 1, 1, .5, 1), 1, 4, 5, // parallelogram
-            array(.5, 0, 1, .5, .5, 1, 0, .5), // rotated square
-            array(0, 0, 1, 0, 1, 1), // fill
-        );
+            [0, 0, 1, 0, .5, 1], 1, 2, 3, // regular triangle
+            [0, 0, 1, 0, 0, 1], 1, 2, 3, // isosceles right triangle
+            [0, 0, 1, 0.5, 0.5, 1], 1, 2, 3, // isosceles triangle
+            [0, 0, 1, 1, 1, 0, 0, 1], 1, // bowknot
+            [.5, 0, .5, 1, 1, .5, 0, .5], 1, // rotated bowknot
+            [0, 0, .5, 0, 1, 1, .5, 1], 1, 4, 5, // parallelogram
+            [.5, 0, 1, .5, .5, 1, 0, .5], // rotated square
+            [0, 0, 1, 0, 1, 1], // fill
+        ];
     }
 
     public function getMinimumSize()

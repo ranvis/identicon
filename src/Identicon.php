@@ -59,19 +59,19 @@ class Identicon
         $tile = $this->tile;
         $tile->allocate($tileSize);
         $br = $tileSize * ($tiles - 1);
-        $offsets = array(
+        $offsets = [
             // x, y, innerMoveX, innerMoveY, outerMoveX, outerMoveY
             // corners and sides
-            array(0, 0, 0, 1, 1, 0),
-            array($br, 0, -1, 0, 0, 1),
-            array($br, $br, 0, -1, -1, 0),
-            array(0, $br, 1, 0, 0, -1),
+            [0, 0, 0, 1, 1, 0],
+            [$br, 0, -1, 0, 0, 1],
+            [$br, $br, 0, -1, -1, 0],
+            [0, $br, 1, 0, 0, -1],
             // opposite sides
-            array($br, 0, 0, 1, -1, 0),
-            array($br, $br, -1, 0, 0, -1),
-            array(0, $br, 0, -1, 1, 0),
-            array(0, 0, 1, 0, 0, 1),
-        );
+            [$br, 0, 0, 1, -1, 0],
+            [$br, $br, -1, 0, 0, -1],
+            [0, $br, 0, -1, 1, 0],
+            [0, 0, 1, 0, 0, 1],
+        ];
         if (!$this->image) {
             $this->image = $image = imagecreatetruecolor($tileSize * $tiles, $tileSize * $tiles);
             $this->white = imagecolorallocate($image, 255, 255, 255);
@@ -83,7 +83,7 @@ class Identicon
         $center = ($tiles & 1) ? ($tiles >> 1) : -1;
         $numColors = $this->colors;
         assert('$this->getMinimumHashLength() <= strlen($hash)');
-        $colors = array();
+        $colors = [];
         for ($i = 0; $i < $numColors; $i++) {
             $r = hexdec(substr($hash, $index, 2)); $index += 2;
             $g = hexdec(substr($hash, $index, 2)); $index += 2;

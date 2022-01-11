@@ -22,7 +22,7 @@ abstract class TileBase implements TileInterface
     public function __construct(array $bgColor = null)
     {
         if ($bgColor === null) {
-            $bgColor = array(255, 255, 255);
+            $bgColor = [255, 255, 255];
         }
         $this->bgColor = $bgColor;
     }
@@ -77,7 +77,7 @@ abstract class TileBase implements TileInterface
             }
             $pattern = $this->patterns[$type];
         }
-        return array($pattern, $rotation);
+        return [$pattern, $rotation];
     }
 
     protected function applyRotation($image, $rotation)
