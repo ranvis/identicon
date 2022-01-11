@@ -4,5 +4,7 @@
  * @license BSD 2-Clause License
  */
 
-// ITlie is deprecated (without @-annotation)
-class_alias('Ranvis\Identicon\TileInterface', 'Ranvis\Identicon\ITile');
+/**
+ * @deprecated Use TileInterface instead.
+ */
+class_alias(Ranvis\Identicon\TileInterface::class, Ranvis\Identicon\ITile::class);

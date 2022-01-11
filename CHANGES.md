@@ -1,5 +1,9 @@
 # Changes
 
+## 1.0.2
+
+- Require PHP 7.4+.
+
 ## 1.0.1
 
 - [deprecate] ITile interface is deprecated.

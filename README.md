@@ -16,7 +16,7 @@ BSD 2-Clause License
 ## Installation
 
 `
-composer.phar require ranvis/identicon:1.0.*
+composer require ranvis/identicon:1.0.*
 `
 
 1.1 or later may have visual incompatibility with 1.0.
@@ -32,7 +32,7 @@ See [CHANGES.md](CHANGES.md) for the details.
 ```php
 use Ranvis\Identicon;
 
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 //$hash = md5($userId . 'YOUR_RANDOM_SALT_HERE_&ar/1R#S[|=hDF');
 

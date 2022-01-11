@@ -82,7 +82,7 @@ class Identicon
         $xMid = ($xEnd + 1) >> 1;
         $center = ($tiles & 1) ? ($tiles >> 1) : -1;
         $numColors = $this->colors;
-        assert('$this->getMinimumHashLength() <= strlen($hash)');
+        assert($this->getMinimumHashLength() <= strlen($hash));
         $colors = [];
         for ($i = 0; $i < $numColors; $i++) {
             $r = hexdec(substr($hash, $index, 2)); $index += 2;
@@ -156,7 +156,7 @@ class Identicon
      */
     public function getImage($size = null)
     {
-        assert('$this->image');
+        assert($this->image);
         if ($size === null) {
             $size = $this->maxSize;
         }
