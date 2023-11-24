@@ -36,9 +36,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 //$hash = md5($userId . 'YOUR_RANDOM_SALT_HERE_&ar/1R#S[|=hDF');
 
-$hash = isset($_GET['hash']) ? $_GET['hash'] : '';
-//$hash = $_GET['hash'] ?? ''; // PHP7+
-if (!preg_match('/^[0-9a-f]{32}$/D', $hash)) {
+$hash = $_GET['hash'] ?? '';
+//$hash = isset($_GET['hash']) ? $_GET['hash'] : ''; // PHP 5
+if (!preg_match('/\A[0-9a-f]{32}\z/', $hash)) {
     http_response_code(404);
     exit;
 }
@@ -63,13 +63,13 @@ $identicon->draw($hash)->output();
 
 ### Identicon->getMinimumHashLength()
 
-`getMinimumHashLength()`
+`getMinimumHashLength(): int`
 
 get number of hex characters required to draw icon.
 
 ### Identicon->draw()
 
-`draw($hash)`
+`draw($hash): $this`
 
 draw icon to internal buffer.
 
@@ -79,7 +79,7 @@ returns $this.
 
 ### Identicon->output()
 
-`output($size = null, $compression = -1, $filters = -1)`
+`output($size = null, $compression = -1, $filters = -1): bool`
 
 print PNG image to stdout with Content-Type header.
 
@@ -91,7 +91,7 @@ returns true on success.
 
 ### Identicon->save()
 
-`save($filePath, $size = null, $compression = -1, $filters = -1)`
+`save($filePath, $size = null, $compression = -1, $filters = -1): bool`
 
 save PNG image to file.
 
@@ -102,7 +102,9 @@ save PNG image to file.
 
 returns true on success.
 
-### Identicon->getImage($size = null)
+### Identicon->getImage()
+
+`getImage($size = null): resource`
 
 get icon image.
 
